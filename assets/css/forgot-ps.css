@@ -1,0 +1,184 @@
+/* reset forgot-password css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d4f2f7;
+    display: flex;
+    flex-direction: column; /*sắp xếp theo chiều dọc */
+    min-height: 100vh; /*chiều cao tối thiểu */
+}
+
+header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* nút home */
+.home-button{
+    float: left;
+    padding: 10px 20px;
+    background-color: #5f9ea0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-left: -20px;
+    margin-top: -10px;
+}
+
+.home-button:hover{
+    background-color: #0a3f41;
+    cursor: pointer;
+}
+
+.heading{
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+#forgot-password{
+    max-width: 400px;
+    margin: 70px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0 ,0.1);
+}
+
+.input-container{
+    margin-bottom: 15px;
+}
+
+.input-container label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-container input{
+    width: 92%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-prompt{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-link{
+    color: #007bff;
+}
+
+button[type="submit"]{
+    background-color: #5F9EA0;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover{
+    background-color: #063a36;
+}
+
+/* thông báo */
+.error-message, .success-message {
+    display: none;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Định dạng cho overlay nếu cần */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+footer{
+    text-align: center;
+    margin-top: auto;
+    font-size: 16px;
+    padding: 5px 0;
+    background-color: #5f9ea0;
+    color: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0 ,0.1);
+}
+
+/* định dạng cho hình ảnh */
+.background-image{
+    width: 100%;
+    height: 92vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Định dạng cho form OTP và đặt lại mật khẩu */
+#otpForm, #newPasswordForm {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0 ,0.1);
+}
+
+#otpForm input, #newPasswordForm input {
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#otpForm button, #newPasswordForm button {
+    background-color: #5F9EA0;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#otpForm button:hover, #newPasswordForm button:hover {
+    background-color: #063a36;
+}

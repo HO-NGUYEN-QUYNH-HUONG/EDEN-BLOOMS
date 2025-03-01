@@ -1,0 +1,583 @@
+/* reset cart css */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* body */
+.body{
+    line-height: 1.6;
+    text-align: center;
+    background-color: #d4f2f7;
+    display: flex;
+    flex-direction: column; /*sắp xếp theo chiều dọc */
+    min-height: 100vh;
+    overflow: hidden; /*ẩn thanh cuộn */
+}
+
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    background: #5F9EA0;
+    color: #fff;
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li{
+    margin: 0 15px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+nav ul li a:hover{
+    background-color: none;
+    color: #063a36;
+}
+
+header #menu-toggle{
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #fff;
+}
+
+header #menu-toggle:hover{
+    background-color: none;
+    color: #063a36;
+    cursor: pointer;
+}
+
+/* tài khoản đăng nhập */
+#user-info{
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+#user-info:hover{
+    color: #063a36;
+    background-color: none;
+}
+
+/* cart */
+#cart{
+    padding: 20px;
+    background-color: #d4f2f7;
+    margin: 20px 0;
+    flex: 1; /*cho phép cart chiếm không gian còn lại */
+    overflow-y: auto; /*thêm cuộn nếu nội dung vượt quá chiều cao*/
+}
+
+.section-heading{
+    font-size: 34px;
+    text-align: center;
+    font-weight: 400px;
+    margin-top: 15px;
+}
+
+.section-sub-heading{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+#cart-items{
+    margin-bottom: 20px;
+}
+
+/* thêm sản phẩm vào giỏ hàng */
+.cart-item{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*căn giữa theo chiều ngang */
+    font-size: 16px;
+}
+
+.cart-item img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.cart-item h3{
+    margin: 0;
+    font-size: 20px;
+}
+
+.cart-info{
+    flex-grow: 1;
+    text-align: center;
+}
+
+.cart-info span{
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cart-info .promo-applied{
+    font-size: 12px;
+    color: #888;
+}
+
+.quantity-controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.quantity-controls button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.quantity-controls button:hover {
+    background-color: #ccc;
+}
+
+.quantity {
+    font-size: 18px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.cart-item p{
+    margin: 5px 0;
+}
+
+.cart-item input[type="number"]{
+    width: 50px;
+    margin-left: 10px;
+}
+
+/* nút giảm số lượng */
+.cart-item .removeBtn{
+    background-color: #de5663;
+    color: #fff;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-item .removeBtn:hover{
+    background-color: #7f0a16;
+}
+
+/* nút tăng số lượng */
+.cart-item .addBtn{
+    background-color: #5baf5e;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-item .addBtn:hover{
+    background-color: #08420a;
+}
+
+/* tổng tiền */
+#cart-total{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#total-price.applied{
+    text-decoration: line-through;
+    color: red;
+    opacity: 0.6;
+}
+
+/* khuyến mãi */
+#cart-discount{
+    margin-top: 35px;
+}
+
+/* #promo-message{
+    padding: 15px; /* Khoảng cách bên trong 
+    margin-top: 10px; /* Khoảng cách bên trên 
+    border-radius: 5px; /* Bo góc 
+    font-size: 16px; /* Kích thước chữ 
+    font-weight: bold; /* Đậm chữ 
+    text-align: center; /* Căn giữa 
+    transition: opacity 0.5s ease-out; /* Hiệu ứng mờ dần 
+    width: 20%;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+} */
+
+#promo-message{
+    position: absolute;
+    /* top: 5%;
+    left: 42%; */
+    transform: translate(-50%, -50%); 
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    z-index: 1000;
+    opacity: 0.9;
+    /* transition: opacity 0.5s ease; */
+    animation: messageFadeIn 0.5s ease forwards;
+    font-weight: bold;
+}
+
+#promo-message.red{
+    background-color: #f8d7da;
+    color: #721c24;
+    top: 5%;
+    left: 43%;
+}
+
+#promo-message.green{
+    background-color: #d4edda;
+    color: #155724;
+    top: 5%;
+    left: 38%;
+}
+
+#checkout-btn{
+    bottom: 20px;
+    background-color: #5F9EA0;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#checkout-btn:hover{
+    background-color: #053c3d;
+}
+
+/* thêm hàng vào giỏ để đặt hàng */
+#no-products-message{
+    position: absolute;
+    top: 5%;
+    left: 38%;
+    transform: translate(-50%, -50%); 
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    z-index: 1000;
+    opacity: 0.9;
+    /* transition: opacity 0.5s ease; */
+    animation: messageFadeIn 0.5s ease forwards;
+}
+
+/* khi cần ẩn sau vài giây */
+#no-products-message.fade-out{
+    animation: messageFadeOut 0.5s ease forwards;
+}
+
+/* thông báo giỏ hàng đang trống */
+#empty-cart-message{
+    position: absolute;
+    top: 35%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #000;
+    padding: 20px; 
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #ffffff76;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    z-index: 1000;
+    display: none;
+    text-align: center;
+}
+
+#empty-cart-message a{
+    color: #007bff;
+    text-decoration: underline;
+    font-size: 0.7em;
+}
+
+#empty-cart-message a:hover{
+    color: darkblue;
+}
+
+/* khoảng trống giữa section-sub-heading với total money */
+.spacer{
+    margin-top: 115px;
+    margin-bottom: -2px;
+    background-color: #fff;
+}
+
+#flower-info{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/*modal for buy flowers */
+/* modal: lớp phủ lên */
+.modal.open{
+    display: flex;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    /* right: 0;
+    bottom: 0; */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container{
+    background-color: #fff;
+    width: 700px; /*900px*/
+    max-width: 100%; /*calc(100%-32px);*/
+    border-radius: 10px;
+    /* min-height: 250px; */
+    height: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn ease .5s;
+    position: relative;
+}
+
+.modal-close{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: #fff;
+    font-weight: 800;
+    padding: 12px;
+    opacity: 0.8;
+}
+
+.modal-close:hover{
+    opacity: 1;
+    cursor: pointer;
+    color: #000;
+}
+
+.modal-header{
+    background: #047180;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modal-heading-icon{
+    margin-right: 16px;
+}
+
+.modal-body{
+    padding: 16px;
+}
+
+.modal-label{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.modal-input{
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    margin-bottom: 14px;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+/* khuyến mãi */
+.modal-promo{
+    border: 1px solid #ccc;
+    width: 20%;
+    padding: 12px;
+    font-size: 15px;
+    margin-bottom: 14px;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.modal-title{
+    font-size: 18px;
+    font-style: italic;
+    margin-left: -15px;
+}
+
+#apply-promo-btn{
+    background-color: #5F9EA0;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#apply-promo-btn:hover{
+    background-color: #012e28;
+}
+/* khuyến mãi */
+
+.modal-input:focus{
+    border-color: #00796b;
+}
+
+.modal-button {
+    background-color: #047180;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center; /*căn giữa theo chiều ngang */
+    align-items: center; /*căn giữa theo chiều dọc */
+    text-align: center; /*căn giữa chữ */
+    margin: 0 auto; /*căn giữa nút trong phần tử chứa */
+    width: auto;
+}
+
+.modal-button:hover {
+    background-color: #012e28;
+    opacity: 0.9;
+}
+
+.modal-end{
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 33px;
+}
+
+.modal-help{
+    font-size: 16px;
+    color: #0d668f;
+}
+
+.modal-link{
+    font-size: 16px;
+    color: #007bff;
+}
+
+#confirmation-message{
+    color: rgb(109, 199, 109);
+    font-weight: bold;
+    margin-top: -42px;
+    margin-bottom: 10px;
+}
+
+#footer{
+    text-align: center;
+    font-size: 16px;
+    padding: 14px 0; /*khoảng cách trên và dưới */
+    background-color: #5f9ea0;
+    color: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0 ,0.1);
+    position: relative; /*để footer không bị chồng lên*/
+}
+
+/* đảm bảo footer luôn ở dưới cùng */
+body > footer{
+    margin-top: auto; /*đẩy footer xuống cùng */
+}
+
+/* keyframes: tạo ra những chuyển động liên tiếp; tĩnh->động */
+/* keyframe cho modal điền thông tin */
+@keyframes modalFadeIn{
+    from{
+        opacity: 0; /*độ trong*/
+        transform: translateY(-140px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* keyframe cho thông báo khi bấm vào order */
+@keyframes messageFadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes messageFadeOut {
+    from{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}

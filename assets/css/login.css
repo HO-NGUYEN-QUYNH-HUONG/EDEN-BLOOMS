@@ -1,0 +1,178 @@
+/* reset login css */
+body, h2, p{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column; /*sắp xếp theo chiều dọc */
+    min-height: 100vh; /*chiều cao tối thiểu */
+}
+
+header{
+    position: absolute;
+    box-shadow: 0 2px 10px rgba(0, 0, 0 ,0.1);
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* nút home */
+.home-button{
+    float: left; /*đưa nút về bên trái */
+    padding: 10px 20px;
+    background-color: #5f9ea0;
+    color: #fff;
+    text-decoration: none; /*không có gạch chân */
+    border-radius: 4px;
+}
+
+.home-button:hover{
+    background-color: #0a3f41;
+    cursor: pointer;
+}
+
+/*kiểu cho phần đăng nhập */
+#login{
+    background-color: #fff;
+    padding: 22px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0 ,0.5);
+    margin: 110px 35px; /*khoảng cách xung quanh */
+    max-width: 400px; /*chiều rộng tối đa */
+    align-self: flex-end; /*đưa khung về bên phải */
+    align-items: center;
+}    
+
+#loginForm{
+    margin: 0 auto;
+    padding: 10px;
+    width: 250px;
+}
+
+/*kiểu cho tiêu đề */
+#login .heading{
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/*kiểu cho các label và input */
+.input-container{
+    margin-bottom: 15px;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"]{
+    width: 230px; /*chiều rộng 100% */
+    padding: 10px; /*khoảng cách bên trong */
+    margin-bottom: 15px; /*khoảng cách giữa các trường */
+    border: 1px solid #ccc; /*đường viền */
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* kiểu cho nút đăng nhập */
+#login button{
+    width: 100%;
+    padding: 10px;
+    background-color: #5f9ea0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /*kích thước chữ */
+    margin-top: 15px;
+}
+
+/* hiệu ứng hover cho nút */
+#login button:hover{
+    background-color: #0a3f41;
+}
+
+/* kiểu cho liên kết quên mật khẩu */
+#login .forgot-password{
+    display: block; /*hiển thị dưới dạng khối */
+    text-align: center;
+    margin-top: 35px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+#login .forgot-password:hover{
+    text-decoration: underline; /*gạch chân khi hover */
+    cursor: pointer;
+}
+
+/* kiểu cho checkbox */
+.toggle-password{
+    /* position: absolute; định vị tuyệt đối */
+    transform: translateX(-40%); /*căn giữa chính xác*/
+    background: none;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 4px; */
+    cursor: pointer;
+    /* padding: 10px; */
+    transition: background-color 0.3s;
+    width: 20px;
+    margin-top: -1%;
+}
+
+.toggle-password:hover{
+    background-color: #e0e0e0;
+}
+
+/* kiểu cho checkbox hiện mật khẩu */
+.show-password{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* kiểu cho footer */
+footer{
+    text-align: center;
+    margin-top: auto; /*đẩy footer xuống cùng */
+    font-size: 16px;
+    padding: 14px 0; /*khoảng cách trên và dưới */
+    background-color: #5f9ea0;
+    color: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0 ,0.1);
+}
+
+/* kiểu cho dòng đăng ký */
+.register-prompt{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-link{
+    color: #007bff;
+}
+
+/* định dạng cho hình ảnh */
+.background-image{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* thông báo lỗi */
+.error-message{
+    color: rgb(181, 65, 65);
+    font-weight: bold;
+}

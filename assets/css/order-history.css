@@ -1,0 +1,130 @@
+/* reset order-history css */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* body */
+h2{
+    line-height: 1.6;
+    text-align: center;
+    background-color: #d4f2f7;
+    display: flex;
+    flex-direction: column; /*sắp xếp theo chiều dọc */
+    overflow: hidden; /*ẩn thanh cuộn */
+}
+
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    background: #5F9EA0;
+    color: #fff;
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li{
+    margin: 0 15px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 1000px;
+}
+
+nav ul li a:hover{
+    background-color: none;
+    color: #063a36;
+}
+
+/* tên tài khoản */
+#user-info{
+    font-weight: bold;
+}
+
+#user-info:hover{
+    color: #063a36;
+}
+
+/* danh sách đơn hàng */
+#order-list {
+    display: flex; /*sử dụng flexbox căn giữa */
+    flex-direction: column; /*sắp xếp theo cột */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    list-style: none;
+    background-color: #d4f2f7;
+}
+
+#order-list li {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0 ,0.1);
+    font-weight: bold;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center; /*căn trái cho thông tin */
+}
+
+#order-list img{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.order-info{
+    color: #000;
+   flex: 1;
+}
+
+.buy-again-btn{
+    color: rgb(171, 76, 76);
+    /* border: none; */
+    /* padding: 5px 10px; */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.buy-again-btn:hover{
+   color: rgb(81, 17, 17);
+}
+
+/* footer */
+footer{
+    text-align: center;
+    margin-top: auto; /*đẩy footer xuống cùng */
+    font-size: 16px;
+    padding: 14px 0; /*khoảng cách trên và dưới */
+    background-color: #5f9ea0;
+    color: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0 ,0.1);
+}

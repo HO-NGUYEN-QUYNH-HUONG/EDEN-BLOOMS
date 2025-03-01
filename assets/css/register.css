@@ -1,0 +1,140 @@
+/* Đặt lại một số kiểu mặc định */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Màu nền nhẹ */
+}
+
+header {
+    position: absolute;
+    box-shadow: 0 2px 10px rgba(0, 0, 0 ,0.1);
+}
+
+.home-button{
+    float: left; /*đưa nút về bên trái */
+    padding: 10px 20px;
+    background-color: #5f9ea0;
+    color: #fff;
+    text-decoration: none; /*không có gạch chân */
+    border-radius: 4px;
+    margin-top: -70px;
+}
+
+.home-button:hover{
+    background-color: #0a3f41;
+    cursor: pointer;
+}
+
+#register {
+    max-width: 400px; /* Chiều rộng tối đa của form */
+    margin: 70px auto; /* Căn giữa form */
+    padding: 20px;
+    background-color: white; /* Màu nền cho form */
+    border-radius: 8px; /* Bo góc cho form */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho form */
+}
+
+.heading {
+    text-align: center;
+    color: #333; /* Màu chữ cho tiêu đề */
+}
+
+.input-container {
+    margin-bottom: 15px; /* Khoảng cách giữa các trường nhập liệu */
+}
+
+label {
+    display: block; /* Hiển thị label như một khối */
+    margin-bottom: 5px; /* Khoảng cách dưới label */
+    color: #555; /* Màu chữ cho label */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%; /* Chiều rộng 100% */
+    padding: 10px; /* Padding cho trường nhập liệu */
+    border: 1px solid #ccc; /* Đường viền cho trường nhập liệu */
+    border-radius: 4px; /* Bo góc cho trường nhập liệu */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều rộng */
+}
+
+.show-password {
+    display: flex; /* Sử dụng flexbox để căn chỉnh checkbox và label */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+button {
+    width: 100%; /* Chiều rộng 100% */
+    padding: 10px; /* Padding cho nút */
+    background-color: #5f9ea0; /* Màu nền cho nút */
+    color: white; /* Màu chữ cho nút */
+    border: none; /* Không có đường viền */
+    border-radius: 4px; /* Bo góc cho nút */
+    cursor: pointer; /* Con trỏ khi di chuột qua nút */
+    font-size: 16px; /* Kích thước chữ cho nút */
+}
+
+button:hover {
+    background-color: #0a3f41; /* Màu nền khi di chuột qua nút */
+}
+
+.login-prompt {
+    text-align: center; /* Căn giữa cho đoạn văn */
+    margin-top: 20px; /* Khoảng cách trên đoạn văn */
+}
+
+.login-link{
+    color: #007bff;
+}
+
+footer{
+    text-align: center;
+    margin-top: auto; /*đẩy footer xuống cùng */
+    font-size: 16px;
+    padding: 14px 0; /*khoảng cách trên và dưới */
+    background-color: #5f9ea0;
+    color: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0 ,0.1);
+}
+
+/* hiển thị thông báo lỗi */
+.error-message {
+    display: none; /* Ẩn thông báo mặc định */
+    position: fixed; /* Đặt vị trí cố định */
+    top: 20px; /* Đặt vị trí từ trên xuống */
+    left: 100%; /* Căn giữa */
+    transform: translateX(-50%); /* Căn giữa */
+    z-index: 1000; /* Đặt z-index cao để hiển thị trên các phần tử khác */
+    padding: 10px; /* Padding cho thông báo */
+    border-radius: 5px; /* Bo góc cho thông báo */
+    background-color: rgba(255, 0, 0, 0.7); /* Màu nền đỏ mờ */
+    color: white; /* Màu chữ trắng */
+}
+
+/* hiển thị thông báo đăng ký thành công */
+.success-message {
+    display: none; /* Ẩn thông báo mặc định */
+    position: fixed; /* Đặt vị trí cố định */
+    top: 50%; /* Căn giữa theo chiều dọc */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translate(-50%, -50%); /* Căn giữa */
+    z-index: 1000; /* Đặt z-index cao để hiển thị trên các phần tử khác */
+    padding: 20px; /* Padding cho thông báo */
+    border-radius: 5px; /* Bo góc cho thông báo */
+    background-color: rgba(0, 255, 0, 0.9); /* Màu nền xanh mờ */
+    color: white; /* Màu chữ trắng */
+    text-align: center; /* Căn giữa chữ */
+}
+
+/* định dạng cho hình ảnh */
+.background-image{
+    width: 100%;
+    height: 92vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
