@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eden Blooms</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="icon" href="./assets/img/flower.png" type="image/x-icon" />
+    <script defer src="./assets/script/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+</head>
+<body>
+    <!--begin: header-->
+    <header>
+        <div class="logo">Eden Blooms</div>
+        <div class="search-container">
+            <div class="search-box" id="search-box">
+                <input type="text" placeholder="Tìm kiếm...">
+                <a href="#" class="search-icon ti-search" id="search-icon"></a>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Trang chủ</a></li>
+                <li>
+                    <a href="#introduction">
+                        Giới thiệu
+                        <i class="menu-down-icon ti-angle-down"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="#product">Sản phẩm</a></li>
+                        <!-- <li><a href="cart.html">Giỏ hàng</a></li> -->
+                        <li class="cart-icon">
+                            <a href="cart.html">
+                                Giỏ hàng <i class="ti-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Liên hệ</a></li>
+                <li id="login-menu">
+                    <a href="login.html" id="login-link">Đăng nhập</a>
+                </li>
+                <li id="user-menu" style="display: none;">
+                    <span id="username-display"></span> 
+                    <i class="menu-down-icon ti-angle-down"></i>
+                    <ul class="user-options">
+                        <li><a href="order-history.html">Lịch sử đặt hàng</a></li>
+                        <li><a href="profile.html">Trang cá nhân</a></li>
+                        <li><a href="#" id="logout">Đăng xuất</a></li>
+                    </ul>
+                </li>
+                <li id="admin-link" style="display: none;"><a href="admin.html">Quản trị viên</a></li>
+
+            </ul>
+        </nav>
+        <!--nút menu cho sidebar-->
+        <button id="menu-toggle" class="menu-icon">&#9776;</button>
+    </header>
+    <!--end: header-->
+
+    <!--begin: sidebar-->
+    <div id="overlay"></div> <!-- Lớp phủ mờ -->
+    <div id="sidebar">
+        <button id="close-btn">&times;</button> 
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#introduction">Giới thiệu</a></li>
+            <li><a href="#product">Sản phẩm</a></li>
+            <li><a href="cart.html">Giỏ hàng</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+            <li><a href="login.html">Đăng nhập</a></li>
+        </ul>
+    </div>
+    <!--end: sidebar-->
+
+    <!--begin: slider-->
+    <div class="slider-container">
+        <img src="./assets/img/EB.png" alt="Bìa">
+        <section id="slider">
+            <div class="slides">
+                <div class="slide image-sliderfade">
+                    <img src="./assets/img/cúc1.jpg" alt="Hoa Cúc">
+                    <p>Represents purity and innocence.</p>
+                </div>
+
+                <div class="slide image-sliderfade">
+                    <img src="./assets/img/tulip2.jpg" alt="Tulip">
+                    <p>Symbolizes love and new beginnings.</p>        
+                </div>
+
+                <div class="slide image-sliderfade">
+                    <img src="./assets/img/hồng1.jpg" alt="Hoa Hồng">
+                    <p>A symbol of love and beauty.</p>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;<button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </section>
+    </div>
+    <!--end: slider-->
+
+    <!--begin: introduction-->
+    <section id="introduction">
+        <div class="intro-container">
+            <div class="intro-image">
+                <img src="./assets/img/shop1.jpg" alt="Flower Shop">
+            </div>
+
+            <div class="intro-text">
+                <h2>WELCOME TO EDEN BLOOMS! - Where Flowers Whisper Love.</h2>
+                <p>At Eden Blooms, every flower carries a message of love, whispered through its delicate petals.We offer the freshest and most exquisite flowers, perfect for expressing emotions</p>
+                <!-- <a href="#product" class="btn">Discover More</a> -->
+            </div>
+        </div>
+
+        <div class="intro-container reverse">
+            <div class="intro-image">
+                <img src="./assets/img/imgg.jpg" alt="Fresh Flowers">
+            </div>
+
+            <div class="intro-text">
+                <h2>Bringing Nature’s Elegance to Every Moment.</h2>
+                <p>We bring nature’s elegance to every moment with handpicked, fresh flowers that speak the language of love and beauty.</p>
+                <a href="#product" class="btn"><b>Explore Now</b></a>
+            </div>
+        </div>
+    </section>
+    <!--end: introduction-->
+
+    <!--begin: content-->
+    <section id="product">
+        <h2 class="section-heading">Eden Blooms Collection!</h2>
+        <p class="section-sub-heading">Timeless beauty in every petal.</p>
+        <p class="about-text">At Eden Blooms, we believe that every flower tells a story. From the timeless elegance of roses to the cheerful charm of chrysanthemums and the graceful beauty of tulips, our handpicked collections bring nature’s finest blooms to your special moments. Whether you're celebrating love, friendship, or new beginnings, let our fresh, exquisite flowers express what words cannot.</p>
+
+        <div id="home-product-list" class="flower-container">
+            <div class="flower-info">
+                <img src="./assets/img/chrysanthemum.jpg" alt="Hoa Cúc">
+                <h3>Chrysanthemum</h3>
+                <p><b>Description of chrysanthemum: </b> White daisies represent innocence and happiness. With their bright, fresh look, they bring positivity and warmth to any occasion.</p>
+                <p><b>Price: </b> 150.000 VND</p>
+                <p><b>Quantity: </b> 20</p>
+                <p><b>Discount code: </b> <span class="discount-code">10% OFF</span></p>
+                <button class="addToCartBtn" data-flower="Chrysanthemum" data-price="150000">Add to the cart</button>
+            </div>
+
+            <div class="flower-info">
+                <img src="./assets/img/tulips.jpg" alt="Hoa Tulip">
+                <h3>Tulips</h3>
+                <p><b>Description of tulips: </b> Tulips symbolize love, warmth, and new beginnings. Their elegant petals and vibrant colors make them perfect for expressing admiration and joy.</p>
+                <p><b>Price: </b> 200.000 VND</p>
+                <p><b>Quantity: </b> 10</p>
+                <p><b>Discount code: </b> <span class="discount-code">50% OFF</span></p>
+                <button class="addToCartBtn" data-flower="Tulips" data-price="200000">Add to the cart</button>
+            </div>
+
+            <div class="flower-info">
+                <img src="./assets/img/roses.jpg" alt="Hoa Hồng">
+                <h3>Roses</h3>
+                <p><b>Description of roses:</b> Roses are the ultimate symbol of love and beauty. Each color tells a story, making them perfect for heartfelt gestures and special moments.</p>
+                <p><b>Price: </b> 250.000 VND</p>
+                <p><b>Quantity: </b> 15</p>
+                <p><b>Discount code: </b> <span class="discount-code">50% OFF</span></p>
+                <button class="addToCartBtn" data-flower="Roses" data-price="250000">Add to the cart</button>
+            </div>
+        </div>   
+
+        <!-- Thông báo -->
+        <div id="notification" class="notification" style="display: none;">
+            <a href="cart.html" style="color: inherit; text-decoration: none;">
+                <span id="notification-message"></span>
+            </a>
+        </div>
+    </section>
+    <!--end: content-->
+
+    <!--begin: contact-->
+    <div id="contact" class="content-section">
+        <h2 class="section-heading">CONTACT</h2>
+        <p class="section-sub-heading">Stay Connected with Eden Blooms – Where Every Message Blooms.</p>
+
+        <div class="contact-content">
+            <!-- Khung thông tin bên trái -->
+            <div class="contact-info">
+                <p><i class="ti-location-pin"></i> HO CHI MINH City</p>
+                <p><i class="ti-mobile"></i> Phone: +097 645 8374</p>
+                <p><i class="ti-email"></i> Email: meomeo@gmail.com</p>
+            </div>
+
+            <!-- Khung thông tin bên phải -->
+            <div class="contact-form">
+                <form action="">
+                    <input type="text" name="name" placeholder="Name" required class="form-control">
+                    <input type="email" name="email" placeholder="Email" required class="form-control">
+                    <textarea name="message" placeholder="Message" required class="form-control"></textarea>
+                    <input class="btn" type="submit" value="SEND">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--end: contact-->
+
+    <!--thêm nút Back to Top-->
+    <button id="back-to-top" style="display: none;"><i class="ti-arrow-up"></i></button>
+
+    <!--begin: footer-->
+    <div id="footer">
+        <p>&copy; 2025 Eden Blooms. All Rights Reserved.</p>
+    </div>
+    <!--end: footer-->
+
+    <script src="./assets/script/login-script.js"></script>
+</body>
+</html>
