@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - EB</title>
+    <link rel="stylesheet" href="./assets/css/profile.css">
+    <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="icon" href="./assets/img/flower.png" type="image/x-icon" />
+    <script defer src="./assets/script/profile-script.js"></script>
+</head>
+<body>
+    <!--begin: header-->
+    <header>
+        <div class="logo">Eden Blooms</div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <!-- <li><a href="profile.html" id="profile-link">Trang cá nhân</a></li> -->
+                <span id="profile-link"></span>
+                <li><a href="cart.html">Giỏ hàng</a></li>
+                <li id="logout"><a href="#">Đăng xuất</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--end: header-->
+
+    <!--begin: main-->
+    <main>
+        <h2>Thông Tin Cá Nhân</h2>
+
+        <!--khung ảnh đại diện-->
+        <div class="profile-picture-container">
+            <div class="profile-pic-wrapper">
+                <img id="profile-pic-display" src="" alt="Ảnh đại diện">
+            </div>    
+            <input type="file" id="profile-pic" accept="image/*"   style="display: none;">
+            <button id="change-pic-btn">Thay đổi ảnh đại diện</button>
+        </div>
+
+        <form id="profile-form">
+            <div>
+                <label for="username"><b>Tên người dùng: </b></label>
+                <input type="text" id="username" required>
+            </div>
+
+            <div>
+                <label for="email"><b>Email: </b></label>
+                <input type="email" id="email" required>
+            </div>
+
+            <!-- <div>
+                <label for="new-password"><b>Mật khẩu mới: </b></label>
+                <input type="password" id="new-password" placeholder="Nhập mật khẩu mới...">
+            </div> -->
+
+            <div>
+                <button type="submit">Cập nhật thông tin</button>
+            </div>
+        </form>
+        <div id="notification" class="notification" style="display: none;">
+            <span id="notification-message"></span>
+        </div>
+    </main>
+    <!--end: main-->
+
+    <!--footer-->
+    <footer>
+        <p>&copy; 2025 Eden Blooms. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

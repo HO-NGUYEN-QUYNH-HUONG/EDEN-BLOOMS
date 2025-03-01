@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Eden Blooms</title>
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="icon" href="./assets/img/flower.png" type="image/x-icon" />
+    <script defer src="./assets/script/login-script.js"></script>
+</head>
+<body>
+    <!--header-->
+    <header>
+        <a href="index.html" class="home-button"><i class="ti-home"></i> Home </a> <!-- Nút Home với biểu tượng -->
+    </header>
+    
+    <!--body-->
+    <section id="login">
+        <h2 class="heading">EDEN BLOOMS</h2>
+        <form id="loginForm">
+            <div class="input-container">
+                <label for="username">User name: </label>
+                <input type="text" id="username" name="username" required placeholder="Enter username...">
+            </div>
+
+            <div class="input-container">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter password...">
+                <div class="show-password">
+                    <input type="checkbox" id="togglePassword" class="toggle-password">
+                    <label for="togglePassword">Show password</label>
+                </div>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+        <div id="error-message" class="error-message" style="display: none;"></div>
+        <a href="forgot-ps.html" class="forgot-password">Forgot the password?</a>
+        <p class="register-prompt">You do not have an account? <a href="register.html" class="register-link">Register</a></p>
+    </section>
+
+    <img src="./assets/img/EDEN BLOOMS.png" alt="Eden Blooms" class="background-image">
+
+    <!--footer-->
+    <footer>
+        <p>&copy; 2025 Eden Blooms. All Rights Reserved.</p>
+    </footer> 
+</body>
+</html>

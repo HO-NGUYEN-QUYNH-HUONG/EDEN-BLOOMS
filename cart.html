@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EB CART</title>
+    <link rel="stylesheet" href="./assets/css/cart.css">
+    <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="icon" href="./assets/img/flower.png" type="image/x-icon" />
+    <script defer src="./assets/script/cart-script.js"></script>
+</head>
+<body>
+    <!--begin: header-->
+    <header>
+        <div class="logo">Eden Blooms</div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <!-- <li><a href="login.html">Đăng nhập</a></li> -->
+                <li><a href="index.html#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+        <!--hiển thị tên tài khoản khi đăng nhập vào-->
+        <div id="user-info" style="color: #fff; margin-left: 20px; cursor: pointer;"></div>
+    </header>
+    <!--end: header-->
+
+    <!--begin: body-->
+    <div class="body">
+        <section id="cart">
+            <h2 class="section-heading">Your Shopping Cart</h2>
+            <p class="section-sub-heading">A Basket Full of Beauty</p>
+            <div id="cart-items">
+                <!--ví dụ 1 sản phẩm trong giỏ hàng-->
+                <div class="cart-item">
+                    <img src="./assets/img/${item.name.toLowerCase()}.jpg" alt="${item.name}" style="width: 50px; height: 50px; position: relative;">
+                    <span class="discount-code"></span>
+                    <span>${item.name}</span>
+                    <div class="quantity-controls">
+                        <button class="removeBtn" data-index="${index}">-</button>
+                        <span class="quantity">${item.quantity}</span>
+                        <button class="addBtn" data-index="${index}">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--thêm khoảng trắng ở đây-->
+            <div class="spacer"></div>
+
+            <div id="cart-total">
+                <p><b>Total money: </b><span id="total-price">0 VND</span></p>
+                <p><b>Discounted Price: </b><span id="discounted-price">0 VND</span></p>
+            </div>
+
+            <button id="checkout-btn">Order</button>
+            <div id="no-products-message" style="display: none;">
+                <p style="margin: 0; font-size: 18px; color: #ffffffc9;">Add products to the cart to be able to order!</p>
+            </div>
+
+            <!--thêm phần mã khuyến mãi-->
+            <div id="cart-discount">
+                <label for="promo-code" class="modal-title">Promo Code: </label>
+                <input type="text" id="promo-code" class="modal-promo" required placeholder="Enter promo code...">
+                <button id="apply-promo-btn">Apply</button>
+                <div style="text-align: center;">
+                    <p id="promo-message" style=" display: none;"></p> <!--thông báo khuyến mãi-->
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--end: body-->
+
+    <!--thông báo-->
+    <div id="empty-cart-message" style="display: none;">
+        Giỏ hàng của bạn đang trống!
+        <br> <!--thêm br để xuống dòng--> 
+        <a href="index.html">
+            Nhấp vào đây để xem sản phẩm.
+        </a>
+    </div>
+
+    <!--begin: buy flowers button-->
+    <!--Modal for Buying Flower-->
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </div>
+            
+            <!--modal header-->
+            <header class="modal-header">
+                <i class="modal-heading-icon ti-shopping-cart"></i>
+                <h2>Checkout</h2>
+            </header>
+
+            <!--modal body-->
+            <div class="modal-body">
+                <p id="flower-info"></p>
+                <form id="orderForm">
+                    <label for="name" class="modal-label">
+                        <b>Full Name: </b>
+                    </label>
+                    <input type="text" id="name" name="name" class="modal-input" required placeholder="Enter full name...">
+
+                    <label for="phone" class="modal-label">
+                        <b>Phone number: </b>
+                    </label>
+                    <input type="text" id="phone" name="phone" class="modal-input" required placeholder="Enter phone number...">
+
+                    <label for="email" class="modal-label">
+                       <b>Email: </b>
+                    </label>
+                    <input type="email" id="email" name="email" class="modal-input" required placeholder="Enter email...">
+
+                    <label for="date" class="modal-label">
+                        <b>Appointment date: </b>
+                    </label>
+                    <input type="date" id="date" name="date" class="modal-input" required placeholder="Enter date...">
+
+                    <label for="time" class="modal-label">
+                        <b>Select time: </b>
+                    </label>
+                    <select name="time" id="time" class="modal-input" required>
+                        <option value="sáng (8:00 AM - 12:00 PM)">Morning (8:00 AM - 12:00 PM)</option>
+                        <option value="chiều (1:00 PM - 5:00 PM)">Afternoon (1:00 PM - 5:00 PM)</option>
+                        <option value="tối (6:00 PM - 8:00 PM)">Evening (6:00 PM - 8:00 PM)</option>
+                    </select>
+
+                    <label><b>Payment method: </b></label>
+                    <div>
+                        <input type="radio" id="cod" name="payment-method" value="COD" checked>
+                        <label for="cod">Payment when receiving goods (COD)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="transfer" name="payment-method" value="Transfer">
+                        <label for="transfer">Transfer</label>
+                    </div>
+                    
+                    <button type="submit" id="buy-flowers" class="modal-button">
+                        Pay <i class="ti-check"></i>
+                    </button>
+                </form>
+
+                <!-- <div id="qr-code" style="text-align: center; margin-top: 10px;"></div> -->
+            </div>
+
+            <!--modal footer-->
+            <footer class="modal-end">
+                <p class="modal-help">Need <a href="#" class="modal-link">help?</a></p>
+            </footer>
+
+            <!--Hiển thị thông báo đã thanh toán hoặc cảnh báo-->
+            <p id="confirmation-message"></p>
+        </div>
+    </div>
+    <!--end: buy flowers button-->
+
+    <!--begin: footer-->
+    <div id="footer">
+        <p>&copy; 2025 Eden Blooms. All Rights Reserved.</p>
+    </div>
+    <!--end: footer-->
+</body>
+</html>
