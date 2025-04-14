@@ -5,8 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeBtn = document.getElementById("close-btn");
     const overlay = document.getElementById("overlay");
 
+    // const searchIcon = document.getElementById("search-icon");
+    // const searchBox = document.getElementById("search-box");
+
     const searchIcon = document.getElementById("search-icon");
-    const searchBox = document.getElementById("search-box");
+    const searchInput = document.querySelector("#search-box input");
 
     const buyBtns = document.querySelectorAll('.addToCartBtn'); // Nút mua hoa
     const notification = document.getElementById("notification"); // Phần tử thông báo
@@ -15,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const userMenu = document.getElementById("user-menu");
     const loginMenu = document.getElementById("login-menu");
     const logoutButton = document.getElementById("logout");
-    const adminLink = document.getElementById("admin-link");
 
     // Xử lý mở menu sidebar
     menuToggle.addEventListener("click", function () {
@@ -161,39 +163,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Hàm cập nhật header sau khi đăng nhập
-function updateHeader(username) {
-    if (username === "admin") {
-        // Nếu là admin, chỉ hiển thị "Trang chủ", "Quản trị viên" và "Đăng xuất"
-        loginMenu.style.display = 'none';
-        userMenu.style.display = 'none';
-        adminLink.style.display = 'block';
-    } else if (username) {
-        // Nếu là người dùng bình thường, hiển thị tên và các tùy chọn
-        usernameDisplay.textContent = `Xin chào, ${username}`;
-        userMenu.style.display = 'block';
-        loginMenu.style.display = 'none';
-        adminLink.style.display = 'none';
-
-        // Thêm sự kiện click để chuyển đến trang cá nhân
-        usernameDisplay.addEventListener("click", function () {
-            window.location.href = 'profile.html'; // Chuyển đến trang cá nhân
-        });
-    } else {
-        // Nếu chưa đăng nhập, chỉ hiển thị menu đăng nhập
-        userMenu.style.display = 'none';
-        loginMenu.style.display = 'block';
-        adminLink.style.display = 'none';
+    function updateHeader(username) {
+        if (username) {
+            usernameDisplay.textContent = `Xin chào, ${username}`;
+            userMenu.style.display = 'block';
+            loginMenu.style.display = 'none';
+            usernameDisplay.onclick = () => window.location.href = 'profile.html';
+        } else {
+            userMenu.style.display = 'none';
+            loginMenu.style.display = 'block';
+        }
     }
-}
 
     // Thêm sự kiện cho nút đăng xuất
     if (logoutButton) {
         logoutButton.addEventListener("click", function (event) {
-            event.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
-            localStorage.removeItem('username'); // Xóa tên người dùng khỏi localStorage
-            localStorage.removeItem('isAdmin'); // Xóa trạng thái admin
-            updateHeader(null); // Cập nhật lại header
-            window.location.href = 'index.html'; // Chuyển hướng đến trang chủ
+            event.preventDefault();
+            localStorage.removeItem('username');
+            localStorage.removeItem('isLoggedIn');
+            updateHeader(null);
+            window.location.href = 'index.html';
         });
     }
 
@@ -224,32 +213,44 @@ function updateHeader(username) {
     const loginForm = document.getElementById("login-form");
     if (loginForm) {
         loginForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Ngăn trang load lại
-            
+            e.preventDefault();
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
-            // Kiểm tra đăng nhập admin
-            if (username === "admin" && password === "admin123") {
-                localStorage.setItem("isAdmin", "true");
-                localStorage.setItem("username", "admin");
-                window.location.href = "admin.html"; // Chuyển đến trang admin
-                return;
-            }
-
-            // Kiểm tra đăng nhập người dùng
             const users = JSON.parse(localStorage.getItem("users")) || [];
             const user = users.find(u => u.username === username && u.password === password);
 
             if (user) {
                 localStorage.setItem("isLoggedIn", "true");
                 localStorage.setItem("username", username);
-                window.location.href = "index.html"; // Chuyển đến trang chính
+                window.location.href = "index.html";
             } else {
                 document.getElementById("login-error").textContent = "Người dùng không tồn tại!";
             }
         });
     }
 });
+
+function performSearch() {
+    const keyword = searchInput.value.trim();
+    if (keyword !== "") {
+        window.location.href = `search.html?keyword=${encodeURIComponent(keyword)}`;
+    }
+}
+
+// Bấm vào icon tìm kiếm
+searchIcon.addEventListener("click", function (e) {
+    e.preventDefault(); // Ngăn mặc định nhảy lên đầu
+    performSearch();
+});
+
+// Nhấn Enter trong ô input
+searchInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        performSearch();
+    }
+});
+
 
 

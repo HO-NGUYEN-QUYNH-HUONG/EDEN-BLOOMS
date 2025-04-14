@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Result</title>
+    <style>
+        .flower-info {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .flower-info img {
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Search Result</h2>
+    <div id="search-result"></div>
+
+    <script>
+        const flowerData = [
+            {
+                name: "Chrysanthemum",
+                img: "./assets/img/chrysanthemum.jpg",
+                desc: "White daisies represent innocence and happiness. With their bright, fresh look, they bring positivity and warmth to any occasion.",
+                price: "150.000 VND",
+                quantity: 20,
+                discount: "10% OFF"
+            },
+            {
+                name: "Tulips",
+                img: "./assets/img/tulips.jpg",
+                desc: "Tulips symbolize love, warmth, and new beginnings. Their elegant petals and vibrant colors make them perfect for expressing admiration and joy.",
+                price: "200.000 VND",
+                quantity: 10,
+                discount: "50% OFF"
+            },
+            {
+                name: "Roses",
+                img: "./assets/img/roses.jpg",
+                desc: "Roses are the ultimate symbol of love and beauty. Each color tells a story, making them perfect for heartfelt gestures and special moments.",
+                price: "250.000 VND",
+                quantity: 15,
+                discount: "50% OFF"
+            }
+        ];
+
+        function getKeyword() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get("keypress")?.toLowerCase() || "";
+        }
+
+        function showResult() {
+            const keyword = getKeyword();
+            const resultDiv = document.getElementById("search-result");
+
+            const match = flowerData.find(flower =>
+                flower.name.toLowerCase().includes(keyword)
+            );
+
+            if (match) {
+                resultDiv.innerHTML = `
+                    <div class="flower-info">
+                        <img src="${match.img}" alt="${match.name}">
+                        <h3>${match.name}</h3>
+                        <p><b>Description:</b> ${match.desc}</p>
+                        <p><b>Price:</b> ${match.price}</p>
+                        <p><b>Quantity:</b> ${match.quantity}</p>
+                        <p><b>Discount code:</b> ${match.discount}</p>
+                        <button>Add to Cart</button>
+                    </div>
+                `;
+            } else {
+                resultDiv.innerHTML = `<p>No flower found with the name "<b>${keyword}</b>".</p>`;
+            }
+        }
+
+        showResult();
+    </script>
+</body>
+</html>

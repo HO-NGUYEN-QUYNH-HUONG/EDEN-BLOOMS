@@ -22,10 +22,6 @@ body{
     background-color: #d4f2f7;
 }
 
-#main {
-
-}
-
 /* header */
 header {
     display: flex;
@@ -428,8 +424,7 @@ nav ul li a:hover{
     image-rendering: crisp-edges; /* cải thiện độ rõ nét */
     image-rendering: -webkit-optimize-contrast; /*tối ưu hóa độ tương phản */
     border-radius: 5px;
-    margin-bottom: -27px;
-    margin-top: 0;
+    margin-top: 5px;
 }
 
 .slide p{

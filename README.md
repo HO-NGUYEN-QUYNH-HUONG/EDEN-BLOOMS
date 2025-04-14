@@ -9,4 +9,3 @@ Dự án website bán hoa tươi giúp người dùng có thể xem 3 loại hoa
 - Xem giỏ hàng (xóa/thêm sản phẩm)
 - Thay đổi trang cá nhân (đối với khách đã đăng nhập)
 - Mua hoa trực tuyến và nhận email khi đặt hàng
-- Đăng ký / Đăng nhập với tư cách admin (chưa hoàn chỉnh)
