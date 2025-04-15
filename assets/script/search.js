@@ -33,7 +33,6 @@ if (flower) {
             <div class="flower-card-content">
                 <h3>${flower.name}</h3>
                 <p><b>Description:</b> ${flower.description}</p>
-                <br>
                 <p><b>Price:</b> ${flower.price}</p>
                 <a href="index.html#product"     class="view-more-btn">See More</a>
             </div>
