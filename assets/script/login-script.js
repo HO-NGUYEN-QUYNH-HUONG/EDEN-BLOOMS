@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const user = users.find(user => user.username === username);
 
         if (!user) {
-            showError('Tài khoản này không tồn tại. Vui lòng đăng ký.');
+            showError('This account does not exist. Please register.');
         } else if (user.password !== password) {
-            showError('Mật khẩu không đúng.');
+            showError('The password is incorrect.');
         } else {
             // Đăng nhập thành công
             localStorage.setItem('username', username); //lưu tên tài khoản vào localStorage
@@ -47,14 +47,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
-// Hàm cập nhật header sau khi đăng nhập
-// function updateHeader(username) {
-//     const usernameDisplay = document.getElementById("username-display");
-//     const userMenu = document.getElementById("user-menu");
-//     const loginMenu = document.getElementById("login-menu");
-
-//     usernameDisplay.textContent = `Xin chào, ${username}`;
-//     userMenu.style.display = 'block'; // Hiển thị menu người dùng
-//     loginMenu.style.display = 'none'; // Ẩn menu đăng nhập
-// }

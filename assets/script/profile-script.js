@@ -37,11 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
             reader.onload = function (e) {
                 localStorage.setItem('profilePic', e.target.result);
                 document.getElementById("profile-pic-display").src = e.target.result; // Hiển thị ảnh đại diện
-                showNotification("Cập nhật thành công!");
+                showNotification("Success update!");
             };
             reader.readAsDataURL(file);
         } else {
-            showNotification("Cập nhật thành công!");
+            showNotification("Success update!");
         }
     });
 

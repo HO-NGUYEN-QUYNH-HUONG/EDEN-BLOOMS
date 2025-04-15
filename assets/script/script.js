@@ -1,15 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Khai báo các biến cho các phần tử DOM
+    const searchIcon = document.getElementById("search-icon");
+    const searchInput = document.querySelector("#search-box input");
+    const notifications = document.getElementById("search-notification");
+
     const menuToggle = document.getElementById("menu-toggle");
     const sidebar = document.getElementById("sidebar");
     const closeBtn = document.getElementById("close-btn");
     const overlay = document.getElementById("overlay");
-
-    // const searchIcon = document.getElementById("search-icon");
-    // const searchBox = document.getElementById("search-box");
-
-    const searchIcon = document.getElementById("search-icon");
-    const searchInput = document.querySelector("#search-box input");
 
     const buyBtns = document.querySelectorAll('.addToCartBtn'); // Nút mua hoa
     const notification = document.getElementById("notification"); // Phần tử thông báo
@@ -33,18 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
         sidebar.classList.remove("active");
         overlay.classList.remove("active");
     }
-
-    // Tìm kiếm
-    searchIcon.addEventListener("click", function () {
-        searchBox.classList.toggle('active'); // Thay đổi trạng thái hiển thị
-    });
-
-    // Đóng ô tìm kiếm khi nhấp ra ngoài
-    document.addEventListener("click", function (event) {
-        if (!searchBox.contains(event.target) && event.target !== searchIcon) {
-            searchBox.classList.remove('active'); // Ẩn ô tìm kiếm nếu nhấp ra ngoài
-        }
-    });
 
     // Slider
     let slideIndex = 0;
@@ -100,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const username = localStorage.getItem('username');
             if (!username) {
                 // Nếu chưa đăng nhập, hiển thị thông báo yêu cầu đăng nhập
-                showNotification("Hãy đăng nhập để thêm hàng.");
+                showNotification("Please login to add more goods.");
                 return; // Dừng lại không thực hiện thêm vào giỏ hàng
             }
 
@@ -128,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("cart", JSON.stringify(cart));
 
             // Hiển thị thông báo
-            showNotification(`${flowerName} đã được thêm vào giỏ hàng!`);
+            showNotification(`${flowerName} already added to the cart!`);
         });
     });
 
@@ -165,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Hàm cập nhật header sau khi đăng nhập
     function updateHeader(username) {
         if (username) {
-            usernameDisplay.textContent = `Xin chào, ${username}`;
+            usernameDisplay.textContent = `${username}`;
             userMenu.style.display = 'block';
             loginMenu.style.display = 'none';
             usernameDisplay.onclick = () => window.location.href = 'profile.html';
@@ -225,30 +211,43 @@ document.addEventListener("DOMContentLoaded", function () {
                 localStorage.setItem("username", username);
                 window.location.href = "index.html";
             } else {
-                document.getElementById("login-error").textContent = "Người dùng không tồn tại!";
+                document.getElementById("login-error").textContent = "Users do not exist!";
             }
         });
     }
-});
 
-function performSearch() {
-    const keyword = searchInput.value.trim();
-    if (keyword !== "") {
-        window.location.href = `search.html?keyword=${encodeURIComponent(keyword)}`;
+    //tìm kiếm hoa theo tên
+    function goToSearchPage() {
+        const flowerName = searchInput.value.trim();
+        if (flowerName) {
+            window.location.href = "search.html?flower=" + encodeURIComponent(flowerName);
+        } else {
+            notifications.textContent = "Please enter the name of Hoa to search.";
+            notifications.style.display = "block";
+
+            // Ẩn thông báo sau 2.5 giây
+            setTimeout(() => {
+                notifications.style.display = "none";
+            }, 2500);
+        }
     }
-}
 
-// Bấm vào icon tìm kiếm
-searchIcon.addEventListener("click", function (e) {
-    e.preventDefault(); // Ngăn mặc định nhảy lên đầu
-    performSearch();
-});
+    if (searchIcon && searchInput) {
+        // Click vào icon tìm kiếm
+        searchIcon.addEventListener("click", function (event) {
+            event.preventDefault();
+            goToSearchPage();
+        });
 
-// Nhấn Enter trong ô input
-searchInput.addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
-        e.preventDefault();
-        performSearch();
+        // Nhấn phím Enter trong input
+        searchInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                goToSearchPage();
+            }
+        });
+    } else {
+        console.error("No search-icon or search-input!");
     }
 });
 

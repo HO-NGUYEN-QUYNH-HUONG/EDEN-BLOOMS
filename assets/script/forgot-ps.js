@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const email = emailInput.value.trim();
 
         if (!isValidEmail(email)) {
-            showError("Vui lòng nhập email hợp lệ!");
+            showError("Please enter a valid email!");
             return;
         }
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         currentUser = users.find(user => user.email === email); // Tìm user theo email
 
         if (!currentUser) {
-            showError("Email này chưa được đăng ký!");
+            showError("This email has not been registered!");
             return;
         }
 
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
         console.log("OTP (giả lập):", generatedOTP); // In OTP ra console (để test)
 
-        showSuccess("Mã OTP đã được gửi! Vui lòng kiểm tra email.");
+        showSuccess("OTP code has been sent! Please check your email.");
         recoveryForm.style.display = "none";
         otpForm.style.display = "block";
     });
@@ -46,11 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const enteredOTP = otpInput.value.trim();
 
         if (enteredOTP === generatedOTP) {
-            showSuccess("Mã OTP chính xác! Vui lòng đặt lại mật khẩu.");
+            showSuccess("Accurate OTP code! Please reset the password.");
             otpForm.style.display = "none";
             newPasswordForm.style.display = "block";
         } else {
-            showError("Mã OTP không đúng! Vui lòng thử lại.");
+            showError("The OTP code is not right! Please try again.");
         }
     });
 
@@ -60,12 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const newPassword = newPasswordInput.value.trim();
 
         if (newPassword.length < 6) {
-            showError("Mật khẩu phải có ít nhất 6 ký tự!");
+            showError("Password must have at least 6 characters!");
             return;
         }
 
         if (!currentUser) {
-            showError("Lỗi: Không tìm thấy tài khoản để đặt lại mật khẩu.");
+            showError("Error: No account found to reset the password.");
             return;
         }
 
@@ -76,13 +76,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (userIndex !== -1) {
             users[userIndex].password = newPassword; // Cập nhật mật khẩu mới
             localStorage.setItem('users', JSON.stringify(users));
-            showSuccess("Mật khẩu đã được cập nhật thành công!");
+            showSuccess("The password has been successfully updated!");
             
             setTimeout(() => {
                 window.location.href = "login.html"; // Chuyển hướng về trang login
             }, 2000);
         } else {
-            showError("Lỗi: Không tìm thấy tài khoản!");
+            showError("Error: No account found!");
         }
     });
 

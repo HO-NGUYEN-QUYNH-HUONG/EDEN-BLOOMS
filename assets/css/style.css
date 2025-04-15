@@ -68,7 +68,8 @@ nav ul li a:hover{
     display: flex; /*đảm bảo phần tử tìm kiếm hiển thị */
     justify-content: center;
     position: relative;
-    /* display: inline-block; */
+    padding: 10px;
+    flex-wrap: wrap;
 }
 
 .search-icon{
@@ -76,9 +77,7 @@ nav ul li a:hover{
     font-size: 24px;
     margin-left: 5px;
     text-decoration: none;
-    background-color: #97ccce;
-    color: #fff;
-    border-radius: 9%;
+    color: #97ccce;
     padding: 8px;
     transition: background-color 0.3s;
 }
@@ -91,15 +90,10 @@ nav ul li a:hover{
     border-radius: 5px;
     transition: border-color 0.3s;
     border: 1px solid #ccc;
-    margin-right: -300px;
 }
 
 .search-icon:hover{
-    background-color: #145759;
-}
-
-.search-box.active{
-    display: flex; /*hiển thị ô tìm kiếm khi được kích hoạt */
+    color: #145759;
 }
 
 .search-box input{
@@ -108,6 +102,24 @@ nav ul li a:hover{
     padding: 5px;
     width: 200px;
 } 
+
+.search-notification{
+    display: none;
+    position: fixed;
+    top: 100px;
+    left: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
+    z-index: 999; /*đảm bảo thông báo nằm trên các phần tử */
+    text-align: center;
+    font-size: 16px;
+}
 
 /* menu */
 .menu{
@@ -126,12 +138,8 @@ nav ul li a:hover{
     position: absolute;
     background-color: #5F9EA0;
     list-style: none;
-    padding: 0;
     min-width: 160px;
     z-index: 1000;
-    top: 90%;
-    left: -4px;
-    margin-top: 5px;
 }
 
 .menu li:hover .submenu{
@@ -292,11 +300,6 @@ nav ul li a:hover{
     transform: translateY(30px);
     transition: all 0.8s ease-in-out; */
 }
-
-/* #introduction .show{
-    opacity: 1;
-    transform: translateY(0);
-} */
 
 .intro-text{
     flex: 1;
@@ -758,11 +761,7 @@ nav ul li a:hover{
     z-index: 1000;
     background-color: #5F9EA0;
     min-width: 160px;
-    margin-right: 30px;
-    padding: 0;
-    top: 60%;
-    left: 10px;
-    margin-top: 5px;
+    left: -46px;
 }
 
 #user-menu:hover .user-options{

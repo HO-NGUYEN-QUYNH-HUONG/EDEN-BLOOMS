@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Kiểm tra xác thực mật khẩu
         if (password !== confirmPassword) {
-            showError("Xác thực mật khẩu không đúng."); // Hiển thị thông báo lỗi
+            showError("Verify the password incorrectly."); // Hiển thị thông báo lỗi
             return; // Dừng lại nếu mật khẩu không khớp
         }
 
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const existingUser  = users.find(user => user.username === username);
 
         if (existingUser ) {
-            showError("Tên đăng nhập đã tồn tại. Vui lòng chọn tên khác."); // Thông báo nếu tên người dùng đã tồn tại
+            showError("Username existed. Please choose another name."); // Thông báo nếu tên người dùng đã tồn tại
             return; // Dừng lại nếu tên người dùng đã tồn tại
         }
 
@@ -60,12 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
           // localStorage.clear(); // Xóa tất cả dữ liệu trong localStorage
 
             // Hiển thị thông báo thành công
-            showSuccess("Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.");
+            showSuccess("Successful registration! You can login now.");
             setTimeout(() => {
                 window.location.href = "login.html"; // Chuyển hướng đến trang đăng nhập
             }, 3000); // Chờ 3 giây trước khi chuyển hướng
         } else {
-            showError("Vui lòng nhập thông tin hợp lệ."); // Thông báo nếu thông tin không hợp lệ
+            showError("Please enter valid information."); // Thông báo nếu thông tin không hợp lệ
         }
     });
 });

@@ -107,7 +107,7 @@ function updateCart() {
         }
 
         const flowerDetails = cart.map(item => `${item.name} - ${item.quantity}`).join(', ');
-        flowerInfoElement.textContent = `Bạn đã đặt: ${flowerDetails}`;
+        flowerInfoElement.textContent = `You have set: ${flowerDetails}`;
         modal.classList.add('open');
     });
 
@@ -140,7 +140,7 @@ function updateCart() {
         // Kiểm tra thông tin
         if (!flowerEmail || !flowerEmail.includes("@")) {
             confirmationMessage.style.color = "red";
-            confirmationMessage.textContent = "⚠️ Vui lòng nhập email hợp lệ!";
+            confirmationMessage.textContent = "Please enter a valid email!";
             return;
         }
 
@@ -162,20 +162,20 @@ function updateCart() {
 
 
         confirmationMessage.style.color = "green";
-        confirmationMessage.textContent = `Thông tin sẽ được gửi đến email: ${flowerEmail}`;
+        confirmationMessage.textContent = `Information will be sent to email: ${flowerEmail}`;
 
         // Nội dung email
-        const subject = encodeURIComponent("Xác nhận mua hoa từ Eden Blooms");
+        const subject = encodeURIComponent("Confirmation of buying flowers from Eden Blooms");
         const body = encodeURIComponent(
-            `Xin chúc mừng ${customerName}!\n\n` +
-            `Bạn đã đặt thành công:\n` +
+            `Congratulations ${customerName}!\n\n` +
+            `You have successfully placed:\n` +
             `${flowerQuantity}\n` +
             //`Tổng giá: ${formatCurrency(totalPrice)}\n` + tính tổng giá gốc
-            `Tổng giá: ${formatCurrency(discountedTotal)}\n` + // Cập nhật giá sau giảm
-            `Ngày giờ hẹn: ${flowerDate} vào buổi ${flowerTime}\n\n` +
-            `Phương thức thanh toán: ${paymentMethod}\n\n` +
-            `Vui lòng kiểm tra lại thông tin và có mặt đúng giờ để nhận hoa!\n\n` +
-            `Trân trọng,\n` +
+            `Total price: ${formatCurrency(discountedTotal)}\n` + // Cập nhật giá sau giảm
+            `Date of appointment: ${flowerDate} in the ${flowerTime}\n\n` +
+            `Payment method: ${paymentMethod}\n\n` +
+            `Please check the information and be on time to receive flowers!\n\n` +
+            `Best regards,\n` +
             `Eden Blooms`
         );
 
@@ -213,18 +213,18 @@ function updateCart() {
 
         // Kiểm tra nếu giỏ hàng trống
         if (cart.length === 0) {
-            showPromoMessage("Giỏ hàng đang trống!", true);
+            showPromoMessage("The shopping cart is empty!", true);
             return;
         }
 
         if (!promoCode) {
-            showPromoMessage("Vui lòng nhập mã.", true);
+            showPromoMessage("Please enter the code.", true);
             return;
         }
 
         if (promo) {
             if (promo.used) {
-                showPromoMessage("Mã đã được sử dụng!", true);
+                showPromoMessage("The code has been used!", true);
                 return;
             }
         
@@ -239,13 +239,13 @@ function updateCart() {
             
             document.getElementById("discounted-price").textContent = `${formatCurrency(newTotal)}`;
         
-            showPromoMessage(`Mã khuyến mãi "${promoCode}" đã được áp dụng!`, false);
+            showPromoMessage(`Promotion code "${promoCode}" has been applied!`, false);
             promo.used = true;
 
             //xóa nội dung ô nhập mã sau khi áp dụng
             promoCodeInput.value = "";
         } else {
-            showPromoMessage("Mã khuyến mãi không hợp lệ!", true);
+            showPromoMessage("Promotion code is not valid!", true);
         }
     });
 
@@ -320,9 +320,9 @@ document.addEventListener("DOMContentLoaded", function() {
 const username = localStorage.getItem("username");
 const userInfoElement = document.getElementById("user-info");
 if (username) {
-    userInfoElement.innerHTML = `<strong>Xin chào, ${username}!</strong>`; // Hiển thị tên tài khoản
+    userInfoElement.innerHTML = `<strong>${username}!</strong>`; // Hiển thị tên tài khoản
 } else {
-    userInfoElement.textContent = "Bạn chưa đăng nhập."; // Thông báo nếu chưa đăng nhập
+    userInfoElement.textContent = "You have not logged in."; // Thông báo nếu chưa đăng nhập
 }
 
 // Thêm sự kiện click cho phần hiển thị tên tài khoản

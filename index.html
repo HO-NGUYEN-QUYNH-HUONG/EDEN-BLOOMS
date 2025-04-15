@@ -6,8 +6,7 @@
     <title>Eden Blooms</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
-    <link rel="icon" href="./assets/img/flower.png" type="image/x-icon" />
-    <script defer src="./assets/script/script.js"></script>
+    <link rel="icon" href="./assets/img/flower.avif" type="image/x-icon" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 </head>
@@ -17,44 +16,43 @@
         <div class="logo">Eden Blooms</div>
         <div class="search-container">
             <div class="search-box" id="search-box">
-                <input type="text" placeholder="Tìm kiếm...">
+                <input type="text" placeholder="Search...">
                 <a href="#" class="search-icon ti-search" id="search-icon"></a>
             </div>
+            <div id="search-notification" class="search-notification"></div>
         </div>
         <nav>
             <ul class="menu">
-                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Home</a></li>
                 <li>
                     <a href="#introduction">
-                        Giới thiệu
+                        Introduction
                         <i class="menu-down-icon ti-angle-down"></i>
                     </a>
                     <ul class="submenu">
-                        <li><a href="#product">Sản phẩm</a></li>
+                        <li><a href="#product">Products</a></li>
                         <!-- <li><a href="cart.html">Giỏ hàng</a></li> -->
                         <li class="cart-icon">
                             <a href="cart.html">
-                                Giỏ hàng <i class="ti-shopping-cart"></i>
+                                Cart <i class="ti-shopping-cart"></i>
                                 <span class="cart-count">0</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li><a href="#contact">Liên hệ</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li id="login-menu">
-                    <a href="login.html" id="login-link">Đăng nhập</a>
+                    <a href="login.html" id="login-link">Login</a>
                 </li>
                 <li id="user-menu" style="display: none;">
                     <span id="username-display"></span> 
                     <i class="menu-down-icon ti-angle-down"></i>
                     <ul class="user-options">
-                        <li><a href="order-history.html">Lịch sử đặt hàng</a></li>
-                        <li><a href="profile.html">Trang cá nhân</a></li>
-                        <li><a href="#" id="logout">Đăng xuất</a></li>
+                        <li><a href="order-history.html">Order History</a></li>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="#" id="logout">Log out</a></li>
                     </ul>
                 </li>
-                <li id="admin-link" style="display: none;"><a href="admin.html">Quản trị viên</a></li>
-
             </ul>
         </nav>
         <!--nút menu cho sidebar-->
@@ -67,12 +65,12 @@
     <div id="sidebar">
         <button id="close-btn">&times;</button> 
         <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#introduction">Giới thiệu</a></li>
-            <li><a href="#product">Sản phẩm</a></li>
-            <li><a href="cart.html">Giỏ hàng</a></li>
-            <li><a href="#contact">Liên hệ</a></li>
-            <li><a href="login.html">Đăng nhập</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#product">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
         </ul>
     </div>
     <!--end: sidebar-->
@@ -213,6 +211,6 @@
     </div>
     <!--end: footer-->
 
-    <script src="./assets/script/login-script.js"></script>
+    <script src="./assets/script/script.js"></script>
 </body>
 </html>

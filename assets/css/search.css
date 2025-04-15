@@ -1,0 +1,147 @@
+/* reset cart css */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* body */
+.body{
+    line-height: 1.6;
+    text-align: center;
+    background-color: #d4f2f7;
+    display: flex;
+    flex-direction: column; /*sắp xếp theo chiều dọc */
+    min-height: 100vh;
+    overflow: hidden; /*ẩn thanh cuộn */
+}
+
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    background: #5F9EA0;
+    color: #fff;
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li{
+    margin: 0 15px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+nav ul li a:hover{
+    background-color: none;
+    color: #063a36;
+}
+
+header #menu-toggle{
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #fff;
+}
+
+header #menu-toggle:hover{
+    background-color: none;
+    color: #063a36;
+    cursor: pointer;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+main {
+    padding: 30px;
+    text-align: center;
+}
+
+.result-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.flower-card {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #fff;
+    max-width: 800px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.flower-card img {
+    width: 175px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.flower-card-content {
+    flex: 1;
+}
+
+.flower-card h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #063a36;
+}
+
+.flower-card p {
+    margin: 8px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.view-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #5F9EA0;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.view-more-btn:hover {
+    background-color: #063a36;
+}
