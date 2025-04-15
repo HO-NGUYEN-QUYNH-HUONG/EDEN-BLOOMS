@@ -31,6 +31,13 @@ header {
     color: #fff;
 }
 
+.header-left{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-weight: bold;
+}
+
 .logo{
     font-size: 24px;
     font-weight: bold;
@@ -50,12 +57,11 @@ nav ul li{
 nav ul li a{
     text-decoration: none;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
 }
 
 nav ul li a:hover{
-    background-color: none;
     color: #063a36;
 }
 
@@ -75,13 +81,14 @@ header #menu-toggle:hover{
 
 /* tài khoản đăng nhập */
 #user-info{
-    transition: color 0.3s;
     font-weight: bold;
+    margin-left: 20px;
+    font-size: 18px;
 }
 
 #user-info:hover{
     color: #063a36;
-    background-color: none;
+    cursor: pointer;
 }
 
 /* cart */
@@ -238,25 +245,8 @@ header #menu-toggle:hover{
     margin-top: 35px;
 }
 
-/* #promo-message{
-    padding: 15px; /* Khoảng cách bên trong 
-    margin-top: 10px; /* Khoảng cách bên trên 
-    border-radius: 5px; /* Bo góc 
-    font-size: 16px; /* Kích thước chữ 
-    font-weight: bold; /* Đậm chữ 
-    text-align: center; /* Căn giữa 
-    transition: opacity 0.5s ease-out; /* Hiệu ứng mờ dần 
-    width: 20%;
-    box-sizing: border-box;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-} */
-
 #promo-message{
     position: absolute;
-    /* top: 5%;
-    left: 42%; */
     transform: translate(-50%, -50%); 
     background-color: rgba(0, 0, 0, 0.6); 
     padding: 20px; 
@@ -264,7 +254,6 @@ header #menu-toggle:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
     z-index: 1000;
     opacity: 0.9;
-    /* transition: opacity 0.5s ease; */
     animation: messageFadeIn 0.5s ease forwards;
     font-weight: bold;
 }
@@ -273,14 +262,14 @@ header #menu-toggle:hover{
     background-color: #f8d7da;
     color: #721c24;
     top: 5%;
-    left: 43%;
+    left: 42%;
 }
 
 #promo-message.green{
     background-color: #d4edda;
     color: #155724;
     top: 5%;
-    left: 38%;
+    left: 39%;
 }
 
 #checkout-btn{
@@ -302,7 +291,7 @@ header #menu-toggle:hover{
 #no-products-message{
     position: absolute;
     top: 5%;
-    left: 38%;
+    left: 37%;
     transform: translate(-50%, -50%); 
     background-color: rgba(0, 0, 0, 0.6); 
     padding: 20px; 
@@ -310,7 +299,6 @@ header #menu-toggle:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
     z-index: 1000;
     opacity: 0.9;
-    /* transition: opacity 0.5s ease; */
     animation: messageFadeIn 0.5s ease forwards;
 }
 
@@ -374,8 +362,6 @@ header #menu-toggle:hover{
     z-index: 10;
     left: 0;
     top: 0;
-    /* right: 0;
-    bottom: 0; */
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
@@ -388,7 +374,6 @@ header #menu-toggle:hover{
     width: 700px; /*900px*/
     max-width: 100%; /*calc(100%-32px);*/
     border-radius: 10px;
-    /* min-height: 250px; */
     height: auto;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     animation: modalFadeIn ease .5s;

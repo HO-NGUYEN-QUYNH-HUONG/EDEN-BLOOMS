@@ -1,5 +1,9 @@
 # EDEN-BLOOMS
 
+## Thời gian
+- Bắt đầu: 05/02/2025
+- Tình trạng: Ongoing
+
 ## Mô tả
 Dự án website bán hoa tươi giúp người dùng có thể xem 3 loại hoa cơ bản như hoa hồng, hoa tulip và hoa cúc, đăng ký / đăng nhập tài khoản và mua hoa.
 

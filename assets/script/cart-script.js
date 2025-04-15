@@ -12,10 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const noProductsMessage = document.getElementById("no-products-message");
     const applyPromoBtn = document.getElementById("apply-promo-btn");
     const promoCodeInput = document.getElementById("promo-code");
-    const promoMessage = document.getElementById("promo-message");
-    const profileLink = document.getElementById("profile-link"); // Thay đổi ID cho phần tử hiển thị tên người dùng
-    const username = localStorage.getItem('username');
-
+    
     // Định nghĩa các mã khuyến mãi và tỷ lệ giảm giá
     const promoCodes = {
         "50% OFF": { discount: 0.5, used: false }, // Giảm 50%
@@ -48,20 +45,23 @@ function updateCart() {
             total += item.price * item.quantity;
             const discountText = discountCodes[item.name.toLowerCase()] || ""; // Lấy mã giảm giá tương ứng
             
-            cartItemsContainer.innerHTML += `
-                <div class="cart-item" style="position: relative;">
-                    <img src="./assets/img/${item.name.toLowerCase()}.jpg" alt="${item.name}" style="width: 50px; height: 50px;">
-                    <span class="discount-code" style="position: absolute; top: 0; right: 730px; padding: 2px 5px; font-size: 0.8em; color: red;">${discountText}</span>
-                    <div class="cart-item-info">
+            const cartHTML = cart.map((item, index) =>{
+                return`
+                    <div class="cart-item" style="position: relative;">
+                        <img src="../assets/img/${item.name.toLowerCase()}.jpg" alt="${item.name}" style="width: 50px; height: 50px;">
+                        <span class="discount-code" style="position: absolute; top: 0; right: 730px; padding: 2px 5px; font-size: 0.8em; color: red;">${discountText}</span>
+                        <div class="cart-item-info">
                         <span class="product-name">${item.name}</span>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="removeBtn" data-index="${index}">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button class="addBtn" data-index="${index}">+</button>
+                        </div>
                     </div>
-                    <div class="quantity-controls">
-                        <button class="removeBtn" data-index="${index}">-</button>
-                        <span class="quantity">${item.quantity}</span>
-                        <button class="addBtn" data-index="${index}">+</button>
-                    </div>
-                </div>
-            `;
+                `;
+            }).join('');
+            cartItemsContainer.innerHTML = cartHTML;    
         });
     }
 
@@ -168,7 +168,7 @@ function updateCart() {
         const subject = encodeURIComponent("Confirmation of buying flowers from Eden Blooms");
         const body = encodeURIComponent(
             `Congratulations ${customerName}!\n\n` +
-            `You have successfully placed:\n` +
+            `You have successfully ordered:\n` +
             `${flowerQuantity}\n` +
             //`Tổng giá: ${formatCurrency(totalPrice)}\n` + tính tổng giá gốc
             `Total price: ${formatCurrency(discountedTotal)}\n` + // Cập nhật giá sau giảm
@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function() {
 const username = localStorage.getItem("username");
 const userInfoElement = document.getElementById("user-info");
 if (username) {
-    userInfoElement.innerHTML = `<strong>${username}!</strong>`; // Hiển thị tên tài khoản
+    userInfoElement.innerHTML = `<strong>${username}</strong>`; // Hiển thị tên tài khoản
 } else {
     userInfoElement.textContent = "You have not logged in."; // Thông báo nếu chưa đăng nhập
 }
@@ -331,6 +331,7 @@ userInfoElement.addEventListener("click", function() {
         window.location.href = "login.html"; // Chuyển hướng đến trang đăng nhập nếu chưa đăng nhập
     } 
 });
+
 
 
 

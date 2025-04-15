@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EB CART</title>
-    <link rel="stylesheet" href="./assets/css/cart.css">
-    <link rel="stylesheet" href="./assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
-    <link rel="icon" href="./assets/img/flower.avif" type="image/x-icon" />
-    <script defer src="./assets/script/cart-script.js"></script>
+    <link rel="stylesheet" href="../assets/css/cart.css">
+    <link rel="stylesheet" href="../assets/fonts/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="icon" href="../assets/img/flower.avif" type="image/x-icon" />
+    <script defer src="../assets/script/cart-script.js"></script>
 </head>
 <body>
     <!--begin: header-->
     <header>
-        <div class="logo">Eden Blooms</div>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <!-- <li><a href="login.html">Đăng nhập</a></li> -->
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="header-left">
+            <div class="logo">Eden Blooms</div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
         <!--hiển thị tên tài khoản khi đăng nhập vào-->
-        <div id="user-info" style="color: #fff; margin-left: 20px; cursor: pointer;"></div>
+        <div id="user-info"></div>
     </header>
     <!--end: header-->
 
@@ -33,7 +34,7 @@
             <div id="cart-items">
                 <!--ví dụ 1 sản phẩm trong giỏ hàng-->
                 <div class="cart-item">
-                    <img src="./assets/img/${item.name.toLowerCase()}.jpg" alt="${item.name}" style="width: 50px; height: 50px; position: relative;">
+                    <img src="../assets/img/${item.name.toLowerCase()}.jpg" alt="${item.name}" style="width: 50px; height: 50px; position: relative;">
                     <span class="discount-code"></span>
                     <span>${item.name}</span>
                     <div class="quantity-controls">
@@ -60,7 +61,12 @@
             <!--thêm phần mã khuyến mãi-->
             <div id="cart-discount">
                 <label for="promo-code" class="modal-title">Promo Code: </label>
-                <input type="text" id="promo-code" class="modal-promo" required placeholder="Enter promo code...">
+                <select id="promo-code" class="modal-promo" required>
+                    <option value="">-- Select promotion code --</option>
+                    <option value="10% OFF">10% OFF</option>
+                    <option value="SAVE20">20% OFF</option>
+                    <option value="50% OFF">50% OFF</option>
+                  </select>
                 <button id="apply-promo-btn">Apply</button>
                 <div style="text-align: center;">
                     <p id="promo-message" style=" display: none;"></p> <!--thông báo khuyến mãi-->
@@ -121,9 +127,9 @@
                         <b>Select time: </b>
                     </label>
                     <select name="time" id="time" class="modal-input" required>
-                        <option value="sáng (8:00 AM - 12:00 PM)">Morning (8:00 AM - 12:00 PM)</option>
-                        <option value="chiều (1:00 PM - 5:00 PM)">Afternoon (1:00 PM - 5:00 PM)</option>
-                        <option value="tối (6:00 PM - 8:00 PM)">Evening (6:00 PM - 8:00 PM)</option>
+                        <option value="morning (8:00 AM - 12:00 PM)">Morning (8:00 AM - 12:00 PM)</option>
+                        <option value="afternoon (1:00 PM - 5:00 PM)">Afternoon (1:00 PM - 5:00 PM)</option>
+                        <option value="evening (6:00 PM - 8:00 PM)">Evening (6:00 PM - 8:00 PM)</option>
                     </select>
 
                     <label><b>Payment method: </b></label>

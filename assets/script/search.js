@@ -3,19 +3,19 @@ const flowerData = {
         name: "Chrysanthemum",
         description: "White daisies represent innocence and happiness. With their bright, fresh look, they bring positivity and warmth to any occasion.",
         price: "150.000 VND",
-        image: "./assets/img/chrysanthemum.jpg"
+        image: "../assets/img/chrysanthemum.jpg"
     },
     "tulips": {
         name: "Tulips",
         description: "Tulips symbolize love, warmth, and new beginnings. Their elegant petals and vibrant colors make them perfect for expressing admiration and joy.",
         price: "200.000 VND",
-        image: "./assets/img/tulips.jpg"
+        image: "../assets/img/tulips.jpg"
     },
     "roses": {
         name: "Roses",
         description: "Roses are the ultimate symbol of love and beauty. Each color tells a story, making them perfect for heartfelt gestures and special moments.",
         price: "250.000 VND",
-        image: "./assets/img/roses.jpg"
+        image: "../assets/img/roses.jpg"
     }
 };
 

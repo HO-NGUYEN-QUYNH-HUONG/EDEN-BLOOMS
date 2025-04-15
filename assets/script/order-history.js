@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Thêm hình ảnh sản phẩm
             const img = document.createElement("img");
-            img.src = `./assets/img/${order.name.toLowerCase()}.jpg`; // Đường dẫn đến hình ảnh
+            img.src = `../assets/img/${order.name.toLowerCase()}.jpg`; // Đường dẫn đến hình ảnh
             img.alt = order.name;
 
             // Thêm thông tin đơn hàng
